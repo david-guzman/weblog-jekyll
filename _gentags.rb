@@ -1,6 +1,6 @@
 require 'yaml'
 tags = []
-Dir.glob(File.join('_posts','*.markdown')).each do |file|
+Dir.glob(File.join('_posts','*.md')).each do |file|
 	yaml_s = File.read(file).split(/^---$/)[1]
 	yaml_h = YAML.load(yaml_s)
 	tags += yaml_h['tags']
