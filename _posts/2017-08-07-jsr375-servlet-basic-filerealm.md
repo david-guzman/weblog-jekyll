@@ -20,6 +20,30 @@ done by Maven.
 
 Java 8 and Apache Maven 3 are required to run the sample application.
 
+## Java EE Security RI - Soteria
+
+The version of Soteria used in this example is 1.0-b11-SNAPSHOT
+
+```xml
+<dependency>
+  <groupId>org.glassfish.soteria</groupId>
+  <artifactId>javax.security.enterprise</artifactId>
+  <version>${dep.soteria.version}</version>
+</dependency>
+```
+
+```xml
+<repositories>
+  <repository>
+    <id>Soteria Snapshots</id>
+    <url>https://maven.java.net/content/repositories/snapshots/</url>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
+</repositories>
+```
+
 ## Servlet
 
 ```java
@@ -43,6 +67,40 @@ public class BasicServlet extends HttpServlet {
 }
 ```
 
+## Testing
+
+```java
+@Test
+  public void testDoGetValidCredentials() throws IOException {
+    System.out.println("doGetValidCredentials");
+    httpURLConnection.setRequestProperty(
+      "Authorization", "Basic dGVzdFVzZXI6dGVzdFBhc3N3b3Jk"
+    );
+
+    String result = inputStreamToString(httpURLConnection.getInputStream());
+    String expected = "Caller testUser in role USER";
+    assertEquals(result, expected);
+  }
+
+  @Test
+  public void testDoGetInvalidPassword() throws IOException {
+    System.out.println("doGetInvalidPassword");
+    httpURLConnection.setRequestProperty(
+      "Authorization", "Basic dGVzdFVzZXI6aW52YWxpZFBhc3N3b3Jk"
+    );
+    assertThrows(IOException.class, () -> {
+      inputStreamToString(httpURLConnection.getInputStream());
+    });
+  }
+
+  @Test
+  public void testDoGetNoCredentials() {
+    System.out.println("doGetNoCredentials");
+    assertThrows(IOException.class, () -> {
+      inputStreamToString(httpURLConnection.getInputStream());
+    });
+}
+```
 
 ## Further reading
 - [JSR 375: Java EE Security API][jsr-375]
