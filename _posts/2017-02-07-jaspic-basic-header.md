@@ -1,7 +1,6 @@
 ---
 layout: post
-title: "Configuring JASPIC security for a JAX-RS endpoint using BASIC
-authentication"
+title: "JASPIC security for a JAX-RS endpoint using BASIC authentication"
 date: 2017-02-07
 tags:
 - JASPIC
