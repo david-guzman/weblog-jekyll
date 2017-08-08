@@ -46,6 +46,8 @@ The version of Soteria used in this example is 1.0-b11-SNAPSHOT
 
 ## Servlet
 
+### @BasicAuthenticationMechanismDefinition annotation
+
 ```java
 @WebServlet(urlPatterns = "/basicServlet")
 @DeclareRoles({"USER"})
@@ -104,10 +106,10 @@ public class BasicServlet extends HttpServlet {
 
 ## Further reading
 - [JSR 375: Java EE Security API][jsr-375]
-- [JASPIC by Arjan Tims][jaspic-zeef]
-- [Adding Authentication Mechanisms to the GlassFish Servlet Container][techtips-auth]
+- [Java EE 8 by Arjan Tims][javaee8-zeef]
+- [What's new in Java EE Security API 1.0?][whats-new-security-api]
 
 [jsr-375]: https://www.jcp.org/en/jsr/detail?id=375
-[jaspic-zeef]: https://jaspic.zeef.com/arjan.tijms
+[javaee8-zeef]: https://javaee8.zeef.com/arjan.tijms#block_40027
 [guzman-github]: https://github.com/david-guzman/weblog-examples
-[techtips-auth]: https://blogs.oracle.com/enterprisetechtips/entry/adding_authentication_mechanisms_to_the
+[whats-new-security-api]: http://arjan-tijms.omnifaces.org/p/whats-new-in-java-ee-security-api-10.html
