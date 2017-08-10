@@ -16,7 +16,7 @@
 title: David Guzman - Weblog
 email: d.guzman@ucl.ac.uk
 description: > # this means to ignore newlines until "baseurl:"
-  On Java, databases and web technologies. Powered by a blend of Assam, Ceylon and Kenyan teas.
+  On Java EE, databases and web technologies. Powered by a blend of Assam, Ceylon and Kenyan teas.
 baseurl: "" # the subpath of your site, e.g. /blog
 url: "http://mrguzman.me.uk" # the base hostname & protocol for your site, e.g. http://example.com
 twitter_username: mrguzmanmeuk

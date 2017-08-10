@@ -16,7 +16,7 @@ layout: default
       {% if page.tags.size > 0 %}
         Tag{% if page.tags.size > 1 %}s{% endif %}:
         {% assign tags = page.tags | sort %}
-        {% include tagcloud.html %}
+        {% include taglist.html %}
       {% endif %}
     </p>
   </header>
