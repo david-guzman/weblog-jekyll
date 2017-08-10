@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "JSR 375 BASIC authentication with a Servlet (file realm)"
+title: "Testing JSR 375 BASIC authentication in a Servlet (file realm)"
 date: 2017-08-07
 tags:
 - JSR 375
