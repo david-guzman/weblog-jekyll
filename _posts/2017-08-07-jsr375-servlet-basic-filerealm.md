@@ -21,9 +21,9 @@ vendor-specific configuration.
 ## Source code
 
 The complete source code of the example used in this post is available on the
-weblog's [Github repo][guzman-github], in the `servlet-jsr375` folder.
+weblog's [Github repo][guzman-github], in the `servlet-jsr375/servlet-basic-file` folder.
 
-The integration tests are run on a local installation of Glassfish 4.1.1 (web
+The integration tests are run against a local installation of Glassfish 4.1.1 (web
 profile), and do not use Arquillian or Cargo. The configuration of Glassfish is
 done by Maven.
 
@@ -59,9 +59,9 @@ dependency.
 
 ```xml
 <dependency>
-<groupId>org.glassfish.soteria</groupId>
-<artifactId>javax.security.enterprise</artifactId>
-<version>${dep.soteria.version}</version>
+  <groupId>org.glassfish.soteria</groupId>
+  <artifactId>javax.security.enterprise</artifactId>
+  <version>${dep.soteria.version}</version>
 </dependency>
 ```
 
@@ -70,13 +70,13 @@ to be enabled in the POM.
 
 ```xml
 <repositories>
-<repository>
-<id>Soteria Snapshots</id>
-<url>https://maven.java.net/content/repositories/snapshots/</url>
-<snapshots>
-<enabled>true</enabled>
-</snapshots>
-</repository>
+  <repository>
+    <id>Soteria Snapshots</id>
+    <url>https://maven.java.net/content/repositories/snapshots/</url>
+    <snapshots>
+      <enabled>true</enabled>
+    </snapshots>
+  </repository>
 </repositories>
 ```
 
